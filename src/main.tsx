@@ -1,12 +1,11 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import App from './App'
 import Counter from './pages/Counter'
-import Home from './pages/Home'
 
 ReactDOM.render(
   <React.StrictMode>
-    <Home />
-    {/* <Counter initialTime="25" /> */}
+    <App />
   </React.StrictMode>,
   document.getElementById('root')
 )
