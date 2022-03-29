@@ -26,10 +26,9 @@ button {
   font-size: 1.5em;
   font-weight: 600;
   cursor: pointer;
-  margin-top: 0.5em;
   height: 50%;
-  width: 100%;
-  margin: 1.5em;
+  width: 6em;
+  margin: 0.5em 0;
 }
 
 h1 {

@@ -1,6 +1,6 @@
 .navbar {
-  margin: 1em;
-  height: 10vh;
+  padding: 1em;
+  height: 5em;
   width: 100vw;
 }
 .navbar ul {
@@ -10,8 +10,14 @@
   list-style: none;
   display: flex;
   align-items: center;
-  justify-content: space-around;
-  padding: 0.5;
+  justify-content: space-between;
+  padding: 0.5em;
+}
+.navbar ul li:first-child {
+  padding-left: 0.75em;
+}
+.navbar ul li:last-child {
+  padding-right: 0.75em;
 }
 #logo,
 a {
