@@ -1,14 +1,16 @@
 import '../styles/base.css';
 import '../styles/home.css';
 import { Link } from 'react-router-dom'
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 const Home = () => {
 
   const [inputValue, setInputValue] = useState(false);
 
   const handleInput = ({ target }: any) => {
-    setInputValue(target.value);
+    if (target.value !== "00:00") {
+      setInputValue(target.value);
+    }
   }
 
   return (
@@ -22,7 +24,7 @@ const Home = () => {
           type="time"
           placeholder="00:00"
           className="timeInput" />
-        <Link to={`/counter/${inputValue}`}>
+        <Link to="/counter">
           <button
             disabled={!inputValue}
             className="startButton"

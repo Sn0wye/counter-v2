@@ -1,5 +1,5 @@
-import Counter from "./pages/Counter"
-import Home from "./pages/Home"
+import Counter from "./components/Counter"
+import Home from "./components/Home"
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 function App() {
@@ -12,7 +12,7 @@ function App() {
             <Route exact path="/" >
               <Home />
             </Route>
-            <Route path="/counter/:time">
+            <Route path="/counter">
               <Counter />
             </Route>
           </Switch>

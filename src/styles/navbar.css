@@ -1,0 +1,23 @@
+.navbar {
+  margin: 1em;
+  height: 10vh;
+  width: 100vw;
+}
+.navbar ul {
+  background-color: var(--secondary-color);
+  border: 1px solid var(--secondary-color);
+  border-radius: 50px;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 0.5;
+}
+#logo,
+a {
+  list-style: none;
+  text-decoration: none;
+  font-size: 2.3rem;
+  font-weight: bold;
+  color: var(--main-color);
+}
