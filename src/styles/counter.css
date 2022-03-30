@@ -1,25 +1,62 @@
 .Counter {
+  box-sizing: border-box;
+  height: 100vh;
   display: flex;
   flex-direction: column;
 }
+
+main {
+  display: flex;
+  width: 100%;
+  height: 90vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-counter {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  max-width: 67%;
+  width: 67vw;
+
+  max-height: 50vw;
+  height: 100%;
+
+  background-size: cover;
+  background-color: var(--secondary-color);
+  border-radius: 30px;
+  gap: 2em;
+  font-size: 16px;
+}
 /* --- Remains --- */
-.container .remains {
+.remains {
   color: var(--text-color);
-  font-size: 5rem;
+  font-size: 5em;
 }
 /* --- Numbers --- */
-.container .number {
+.digit span {
   grid-area: number;
   color: var(--text-color);
-  font-size: 7rem;
+  font-size: 7em;
 }
-/* --- Hours minutes and seconds digit --- */
-.container .digit {
-  color: var(--text-color);
-  font-size: 1.5rem;
-}
-/* --- Hours minutes and seconds text --- */
-.container .text {
+.text {
+  display: flex;
+  gap: 1.75em;
+  justify-content: space-evenly;
+
   color: var(--main-color);
-  font-size: 1.5rem;
+  font-size: 1.4em;
+}
+
+.text span {
+  gap: 1em;
+}
+
+@media (max-width: 768px) {
+  .container-counter {
+    font-size: 8px;
+  }
 }
