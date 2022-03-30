@@ -4,14 +4,18 @@ import '../styles/navbar.css'
 
 function Navbar() {
   return (
-    <div className="navbar">
+    <nav>
       <ul>
         <li id="logo">
-          <Link to="/">Counter</Link></li>
-        <li><button id="resetBtn">Reset</button></li>
+          <Link to="/">Counter</Link>
+        </li>
+        <li>
+          <button id="resetBtn">Reset</button>
+        </li>
       </ul>
-    </div>
+    </nav>
   );
 }
 
 export default Navbar;
+

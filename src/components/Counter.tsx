@@ -25,21 +25,23 @@ function Counter() {
   return (
     <div className="Counter">
       <Navbar />
-      <div className="container">
-        <label htmlFor="Remains" className="remains">Remains</label>
-        <section className="digit">
-          <span>{String(hours).padStart(2, '0')}</span>
-          <span>:</span>
-          <span>{String(minutes).padStart(2, '0')}</span>
-          <span>:</span>
-          <span>{String(seconds).padStart(2, '0')}</span>
-        </section>
-        <section className="text">
-          <span id="hour" className="text">Hours</span>
-          <span id="min" className="text">Minutes</span>
-          <span id="sec" className="text">Seconds</span>
-        </section>
-      </div>
+      <main>
+        <div className="container-counter">
+          <label htmlFor="Remains" className="remains">Remains</label>
+          <section className="digit">
+            <span>{String(hours).padStart(2, '0')}</span>
+            <span>:</span>
+            <span>{String(minutes).padStart(2, '0')}</span>
+            <span>:</span>
+            <span>{String(seconds).padStart(2, '0')}</span>
+          </section>
+          <section className="text">
+            <span id="hour" className="text">Hours</span>
+            <span id="min" className="text">Minutes</span>
+            <span id="sec" className="text">Seconds</span>
+          </section>
+        </div>
+      </main>
     </div>
   )
 }
