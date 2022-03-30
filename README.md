@@ -6,5 +6,5 @@
 - [ ]  Send time via props to counter component
 
 ## Counter page
-- [ ]  Add CSS to counter page
+- [x]  Add CSS to counter page
 - [ ]  Make the reset button work 
