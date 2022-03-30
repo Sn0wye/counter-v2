@@ -5,15 +5,12 @@ import '../styles/counter.css'
 
 function Counter() {
 
-  const INITIAL_TIME_IN_SECONDS = 25 * 60; //25 minutes need to change for the input value
+  const INITIAL_TIME_IN_SECONDS = 75 * 60; //1:15:00  1:14:59
   const [secondsAmount, setSecondsAmount] = useState(INITIAL_TIME_IN_SECONDS);
 
-  const minutes = Math.floor(secondsAmount / 60);
-  const seconds = secondsAmount % 60;
-
-  useEffect(() => {
-    // console.log(time)
-  }, [])
+  const hours = Math.floor(secondsAmount / 60 / 60);
+  const minutes = Math.floor((secondsAmount / 60 / 60 - hours) * 60);
+  const seconds = Math.floor(((secondsAmount / 60 / 60 - hours) * 60 - minutes) * 60);
 
   useEffect(() => {
     if (secondsAmount === 0) {
@@ -30,14 +27,18 @@ function Counter() {
       <Navbar />
       <div className="container">
         <label htmlFor="Remains" className="remains">Remains</label>
-        {/* <span className="digit">{String(hours).padStart(2, '0')}</span> */}
-        <span className="digit">:</span>
-        <span className="digit">{String(minutes).padStart(2, '0')}</span>
-        <span className="digit">:</span>
-        <span className="digit">{String(seconds).padStart(2, '0')}</span>
-        <span id="hour" className="text">Hours</span>
-        <span id="min" className="text">Minutes</span>
-        <span id="sec" className="text">Seconds</span>
+        <section className="digit">
+          <span>{String(hours).padStart(2, '0')}</span>
+          <span>:</span>
+          <span>{String(minutes).padStart(2, '0')}</span>
+          <span>:</span>
+          <span>{String(seconds).padStart(2, '0')}</span>
+        </section>
+        <section className="text">
+          <span id="hour" className="text">Hours</span>
+          <span id="min" className="text">Minutes</span>
+          <span id="sec" className="text">Seconds</span>
+        </section>
       </div>
     </div>
   )

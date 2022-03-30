@@ -1,24 +1,20 @@
 import Counter from "./components/Counter"
 import Home from "./components/Home"
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 function App() {
 
   return (
-    <Router>
+    <BrowserRouter>
       <div className="App">
         <div className="content">
-          <Switch>
-            <Route exact path="/" >
-              <Home />
-            </Route>
-            <Route path="/counter">
-              <Counter />
-            </Route>
-          </Switch>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/counter" element={<Counter />} />
+          </Routes>
         </div>
       </div>
-    </Router >
+    </BrowserRouter >
   )
 }
 

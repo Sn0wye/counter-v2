@@ -28,7 +28,7 @@ const Home = () => {
           <button
             disabled={!inputValue}
             className="startButton"
-            data-key="Enter">Start count</button>
+            data-key="Enter">Start</button>
         </Link>
       </form>
     </div>
