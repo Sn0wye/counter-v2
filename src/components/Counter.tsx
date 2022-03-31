@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import Navbar from "./Navbar";
 import '../styles/counter.css'
-import { InputContext } from '../context/InputContext'
+import { InputContext } from '../content/InputContext'
 
 
 function Counter() {

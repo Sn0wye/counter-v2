@@ -2,7 +2,7 @@ import '../styles/base.css';
 import '../styles/home.css';
 import { Link } from 'react-router-dom'
 import { useContext } from 'react';
-import { InputContext } from '../context/InputContext';
+import { InputContext } from '../content/InputContext';
 
 const Home = () => {
 

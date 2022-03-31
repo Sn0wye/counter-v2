@@ -1,7 +1,7 @@
 import Counter from "./components/Counter"
 import Home from "./components/Home"
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import { ContextInput } from './context/InputContext'
+import { ContextInput } from './content/InputContext'
 
 function App() {
 
