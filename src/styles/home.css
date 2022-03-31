@@ -34,9 +34,7 @@ form {
   padding-right: 0.2rem;
 }
 
-.error {
-  background-color: var(--main-color);
-  color: var(--text-color);
+#error {
+  color: var(--main-color);
   padding: 5px;
-  border-radius: 15px;
 }

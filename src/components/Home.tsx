@@ -1,15 +1,21 @@
 import '../styles/base.css';
 import '../styles/home.css';
 import { Link } from 'react-router-dom'
-import { useState } from 'react';
+import { useContext } from 'react';
+import { InputContext } from '../context/InputContext';
 
 const Home = () => {
 
-  const [inputValue, setInputValue] = useState(false);
+  const { inputValue, setInputValue } = useContext(InputContext)
 
   const handleInput = ({ target }: any) => {
     if (target.value !== "00:00") {
-      setInputValue(target.value);
+
+      const timeArray = target.value.split(":");
+      const hoursInMiliseconds = timeArray[0] * 60 * 60;
+      const minutesInSeconds = timeArray[1] * 60;
+      const allSeconds = hoursInMiliseconds + minutesInSeconds;
+      setInputValue(allSeconds);
     }
   }
 

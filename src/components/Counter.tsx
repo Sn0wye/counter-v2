@@ -1,11 +1,16 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import Navbar from "./Navbar";
 import '../styles/counter.css'
+import { InputContext } from '../context/InputContext'
 
 
 function Counter() {
 
-  const INITIAL_TIME_IN_SECONDS = 75 * 60; //1:15:00  1:14:59
+  const { inputValue, setInputValue } = useContext(InputContext);
+
+
+  const INITIAL_TIME_IN_SECONDS = inputValue;
+
   const [secondsAmount, setSecondsAmount] = useState(INITIAL_TIME_IN_SECONDS);
 
   const hours = Math.floor(secondsAmount / 60 / 60);
