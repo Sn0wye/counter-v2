@@ -23,7 +23,7 @@ function Counter() {
       return;
     }
     setTimeout(() => {
-      setSecondsAmount(state => state - 1)
+      setSecondsAmount((state: number) => state - 1)
     }, 1000)
   }, [secondsAmount])
 
