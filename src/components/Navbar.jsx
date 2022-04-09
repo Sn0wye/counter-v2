@@ -1,6 +1,7 @@
+import { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import '../styles/base.css'
-import '../styles/navbar.css'
+import '../styles/base.css';
+import '../styles/navbar.css';
 
 function Navbar() {
   return (
@@ -18,4 +19,3 @@ function Navbar() {
 }
 
 export default Navbar;
-
