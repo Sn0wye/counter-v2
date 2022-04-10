@@ -1,4 +1,4 @@
-import { makeObservable } from 'mobx';
+import { makeObservable, observable, computed, action } from 'mobx';
 
 class CounterStore {
   counter = 0;
@@ -55,6 +55,7 @@ class CounterStore {
 
   resetCounter() {
     this.counter = this.inputValue;
+    clearInterval(interval);
   }
 }
 

@@ -12,7 +12,9 @@ function Navbar() {
           <Link to="/">Counter</Link>
         </li>
         <li>
-          <button id="resetBtn">Reset</button>
+          <button id="resetBtn" onClick={counterStore.esetCounter}>
+            Reset
+          </button>
         </li>
       </ul>
     </nav>
