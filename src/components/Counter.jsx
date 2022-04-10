@@ -1,30 +1,19 @@
-import { useContext, useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import Navbar from './Navbar';
 import '../styles/counter.css';
-import { InputContext } from '../content/InputContext';
+import counterStore from '../stores/CounterStore';
+import { observer } from 'mobx-react-lite';
 
 function Counter() {
-  const { inputValue, setInputValue } = useContext(InputContext);
-
-  const INITIAL_TIME_IN_SECONDS = inputValue;
-
-  const [secondsAmount, setSecondsAmount] = useState(INITIAL_TIME_IN_SECONDS);
-
-  const hours = Math.floor(secondsAmount / 60 / 60);
-  const minutes = Math.floor((secondsAmount / 60 / 60 - hours) * 60);
-  const seconds = Math.floor(
-    ((secondsAmount / 60 / 60 - hours) * 60 - minutes) * 60
-  );
-
   useEffect(() => {
-    if (secondsAmount === 0) {
-      alert('Finished');
-      return;
-    }
-    setTimeout(() => {
-      setSecondsAmount(state => state - 1);
+    const interval = setInterval(() => {
+      if (counterStore.counter === 0) {
+        clearInterval(interval);
+        return alert('Finished');
+      }
+      counterStore.decreaseCounter();
     }, 1000);
-  }, [secondsAmount]);
+  }, []);
 
   return (
     <div className="Counter">
@@ -35,11 +24,11 @@ function Counter() {
             Remains
           </label>
           <section className="digit">
-            <span>{String(hours).padStart(2, '0')}</span>
+            <span>{String(counterStore.hours).padStart(2, '0')}</span>
             <span>:</span>
-            <span>{String(minutes).padStart(2, '0')}</span>
+            <span>{String(counterStore.minutes).padStart(2, '0')}</span>
             <span>:</span>
-            <span>{String(seconds).padStart(2, '0')}</span>
+            <span>{String(counterStore.seconds).padStart(2, '0')}</span>
           </section>
           <section className="text">
             <span id="hour" className="text">
@@ -58,4 +47,4 @@ function Counter() {
   );
 }
 
-export default Counter;
+export default observer(Counter);

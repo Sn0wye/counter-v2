@@ -1,4 +1,5 @@
-import { useContext } from 'react';
+import counterStore from '../stores/CounterStore';
+import { observer } from 'mobx-react-lite';
 import { Link } from 'react-router-dom';
 import '../styles/base.css';
 import '../styles/navbar.css';
@@ -18,4 +19,4 @@ function Navbar() {
   );
 }
 
-export default Navbar;
+export default observer(Navbar);
