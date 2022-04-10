@@ -1,4 +1,4 @@
-import { makeAutoObservable } from 'mobx';
+import { makeObservable } from 'mobx';
 
 class CounterStore {
   counter = 0;
@@ -6,7 +6,18 @@ class CounterStore {
   inputValue = 0;
 
   constructor() {
-    makeAutoObservable(this, {}, { autoBind: true });
+    makeObservable(this, {
+      counter: observable,
+      isEnabled: observable,
+      inputValue: observable,
+      hours: computed,
+      minutes: computed,
+      seconds: computed,
+      setInputValue: action,
+      handleInput: action,
+      decreaseCounter: action,
+      resetCounter: action
+    });
   }
 
   decreaseCounter() {
